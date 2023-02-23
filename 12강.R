@@ -63,18 +63,18 @@ boxplot(score)
 plot(a$age, a$salary, col='skyblue', pch=19)
 
 
-# 성별로 구분한 산점도 그리기
+# 성별로 구분한 산점도 그리기 
 # 첫번째 plot은 남, 여 구분 없이 산점도가 표현된다.
 # 두번째 plot 도화지를 먼저 만든 후 
 # 남자의 산점도, 여자의 산점도를 하나하나 그려냈다
-par(mfrow=c(2,1))
+par(mfrow=c(1,1))
 plot(a$age, a$salary, col='skyblue', pch=19) # 첫번째 플롯
 
 
 plot(a$age, a$salary, type="n") # 두번째 플롯
 points(a$age[a$sex==1], a$salary[a$sex==1], pch="M", col="skyblue")
 points(a$age[a$sex==2], a$salary[a$sex==2], pch="F", col="pink")
-legend("bottomright", legend=c("mald,female"),
+legend("bottomright", legend=c("mald","female"),
        pch=c("M","F"), col=c("skyblue","pink"))
 
 
